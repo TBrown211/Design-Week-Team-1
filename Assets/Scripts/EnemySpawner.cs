@@ -24,6 +24,7 @@ public class EnemySpawner : MonoBehaviour
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
         // Spawning at an interval
+        /*
         if (spawnTimer <= 0 && currentEnemyAmt < maxEnemyAmt)
         {
             // Random amount and random spots
@@ -31,11 +32,16 @@ public class EnemySpawner : MonoBehaviour
 
             for (int i = 0; i < amountToSpawn; i++)
             {
+                // Generate a random position
+                // TODO: Need non-hardcoded ranges
+                // TODO: Not spawn on the player
                 Vector2 randomPosition = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
 
+                // Create the enemy
                 GameObject newEnemy = Instantiate(enemyPrefab, randomPosition, Quaternion.identity);
                 newEnemy.transform.parent = transform;
 
+                // Increase enemy amount counter
                 currentEnemyAmt += 1;
             }
 
@@ -46,17 +52,21 @@ public class EnemySpawner : MonoBehaviour
         {
             spawnTimer -= 1 * spawnTimerMultiplier * Time.deltaTime;
         }
+        */
 
         // Debug spawning
         if (Input.GetKeyDown(KeyCode.A))
         {
             GameObject newEnemy = Instantiate(enemyPrefab, mousePos, Quaternion.identity);
             newEnemy.transform.parent = transform;
+
+            currentEnemyAmt += 1;
         }
     }
 
     public void DestroyEnemy()
     {
+        // Reduce amount of enemy counter when one is destroyed
         currentEnemyAmt -= 1;
     }
 }
