@@ -5,7 +5,7 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     // Turret Base
-    public Rigidbody2D rb2d;
+    public Rigidbody2D rbBase;
     public Camera cam;
 
     // Turret gun 
@@ -42,9 +42,9 @@ public class Turret : MonoBehaviour
     private void FixedUpdate()
     {
         // Get look direction
-        Vector2 lookDir = mousePos - rb2d.position;
+        Vector2 lookDir = mousePos - rbBase.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rb2d.rotation = angle;
+        rbBase.rotation = angle;
     }
 
     void Shoot()
