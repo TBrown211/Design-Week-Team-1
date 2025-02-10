@@ -277,7 +277,7 @@ Transform:
   m_GameObject: {fileID: 317674691}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.35, z: -1}
+  m_LocalPosition: {x: 0, y: 1.86, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -313,6 +313,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 4146995907478211557, guid: 40ae28bc880fda9438c3ed51b82d53b2, type: 3}
+  spawnTimer: 1
+  spawnTimerReset: 5
+  spawnTimerMultiplier: 1
+  maxEnemyAmt: 5
+  currentEnemyAmt: 0
   cam: {fileID: 1667840375}
 --- !u!4 &407254864
 Transform:
@@ -651,7 +656,7 @@ Transform:
   m_GameObject: {fileID: 1421964327}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -699,7 +704,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: abdb8769145f4ba4ebd7343172c1e97b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a238a0261474e5f4bb6307c5f2c4d44e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

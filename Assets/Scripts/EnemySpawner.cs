@@ -7,22 +7,56 @@ public class EnemySpawner : MonoBehaviour
     // Enemy prefab
     public GameObject enemyPrefab;
 
+    // Spawning timer
+    public float spawnTimer = 1f;
+    public float spawnTimerReset = 5f;
+    public float spawnTimerMultiplier = 1f;
+    public int maxEnemyAmt = 5;
+    public int currentEnemyAmt;
+
     public Camera cam;
     Vector2 mousePos;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
+        // Get the mouse posistion
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        // Spawning at an interval
+        if (spawnTimer <= 0 && currentEnemyAmt < maxEnemyAmt)
+        {
+            // Random amount and random spots
+            int amountToSpawn = Random.Range(1, 4);
+
+            for (int i = 0; i < amountToSpawn; i++)
+            {
+                Vector2 randomPosition = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
+
+                GameObject newEnemy = Instantiate(enemyPrefab, randomPosition, Quaternion.identity);
+                newEnemy.transform.parent = transform;
+
+                currentEnemyAmt += 1;
+            }
+
+            // Reset timer
+            spawnTimer = spawnTimerReset;
+        }
+        else // Count to next enemy spawn
+        {
+            spawnTimer -= 1 * spawnTimerMultiplier * Time.deltaTime;
+        }
+
+        // Debug spawning
         if (Input.GetKeyDown(KeyCode.A))
         {
-            mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-            GameObject newBrick = Instantiate(enemyPrefab, mousePos, Quaternion.identity);
+            GameObject newEnemy = Instantiate(enemyPrefab, mousePos, Quaternion.identity);
+            newEnemy.transform.parent = transform;
         }
+    }
+
+    public void DestroyEnemy()
+    {
+        currentEnemyAmt -= 1;
     }
 }

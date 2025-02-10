@@ -52,6 +52,7 @@ public class Turret : MonoBehaviour
         // Create bullet at correct point and with correct rotation
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rbBullet = bullet.GetComponent<Rigidbody2D>();
+        bullet.transform.parent = transform;
 
         // Make the bullet move
         rbBullet.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
