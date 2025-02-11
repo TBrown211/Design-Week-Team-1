@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.WSA;
@@ -42,10 +43,10 @@ public class Car_Controller : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            TakeDamage(20);
-        }
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    TakeDamage(20);
+        //}
     }
 
     void FixedUpdate()
@@ -130,14 +131,5 @@ public class Car_Controller : MonoBehaviour
         carCurrentHealth -= damage;
         healthbar.fillAmount = carCurrentHealth / 100;
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Emeny")
-        {
-            TakeDamage(15);
-        }
-    }
-
 
 }
