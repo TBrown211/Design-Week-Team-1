@@ -609,7 +609,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &787321238
 Transform:
   m_ObjectHideFlags: 0
@@ -773,8 +773,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rbBase: {fileID: 1421964330}
   cam: {fileID: 1667840375}
-  controllerDeadzone: 0.1
-  gamepadSmoothing: 1000
   isGamepad: 0
   aim: {x: 0, y: 0}
   firePoint: {fileID: 317674692}
@@ -782,7 +780,7 @@ MonoBehaviour:
   bulletForce: 20
   shotTimer: 0
   shotTimerReset: 0.5
-  shootingMultiplier: 1
+  shootingMultiplier: 4
 --- !u!4 &1534399418
 Transform:
   m_ObjectHideFlags: 0

@@ -4,6 +4,22 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    // Timer
+    private float despawnTimer = 3f;
+
+    public void Update()
+    {
+        // Get rid of bullet if it's life timer runs out
+        if (despawnTimer < 0)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            despawnTimer -= 1 * Time.deltaTime;
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")

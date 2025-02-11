@@ -11,7 +11,7 @@ public class EnemySpawner : MonoBehaviour
     public float spawnTimer = 1f;
     public float spawnTimerReset = 5f;
     public float spawnTimerMultiplier = 1f;
-    public int maxEnemyAmt = 5;
+    public int maxEnemyAmt = 20;
     public int currentEnemyAmt;
 
     public Camera cam;
@@ -27,14 +27,14 @@ public class EnemySpawner : MonoBehaviour
         if (spawnTimer <= 0 && currentEnemyAmt < maxEnemyAmt)
         {
             // Random amount and random spots
-            int amountToSpawn = Random.Range(1, 4);
+            int amountToSpawn = Random.Range(10, 21);
 
             for (int i = 0; i < amountToSpawn; i++)
             {
                 // Generate a random position
                 // TODO: Need non-hardcoded ranges
                 // TODO: Not spawn on the player
-                Vector2 randomPosition = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
+                Vector2 randomPosition = SpawnRange();
 
                 // Create the enemy
                 GameObject newEnemy = Instantiate(enemyPrefab, randomPosition, Quaternion.identity);
@@ -45,7 +45,7 @@ public class EnemySpawner : MonoBehaviour
             }
 
             // Reset timer
-            spawnTimer = spawnTimerReset;
+            spawnTimer = Random.Range(3, 8);
         }
         else // Count to next enemy spawn
         {
@@ -67,5 +67,17 @@ public class EnemySpawner : MonoBehaviour
     {
         // Reduce amount of enemy counter when one is destroyed
         currentEnemyAmt -= 1;
+    }
+
+    // Create a spawn range for the enemies
+    public Vector2 SpawnRange()
+    {
+        Vector2 spawnPlace;
+        Vector2 playerPos = GameObject.Find("Turret").transform.position;
+        Vector2 randomDirection = Random.onUnitSphere;
+
+        spawnPlace = playerPos + randomDirection * 20;
+
+        return spawnPlace;
     }
 }
