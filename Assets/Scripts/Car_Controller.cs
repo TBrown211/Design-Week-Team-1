@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.WSA;
 
 public class Car_Controller : MonoBehaviour
@@ -10,6 +11,8 @@ public class Car_Controller : MonoBehaviour
     public float accelerationFactor = 30f;
     public float turnFactor = 3.5f;
     public float maxSpeed = 20f;
+    public float carMaxHealth = 100f;
+    public float carCurrentHealth;
 
     //Local Variables 
     float acclerationInput = 0;
@@ -22,6 +25,8 @@ public class Car_Controller : MonoBehaviour
     //Components
     Rigidbody2D carRB2D;
 
+    public Image healthbar;
+
 
     private void Awake()
     {
@@ -31,11 +36,27 @@ public class Car_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Set the current health the the max health at the start of the level
+        carCurrentHealth = carMaxHealth;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            TakeDamage(20);
+        }
     }
 
     void FixedUpdate()
     {
+
+        // Makes sure that the current health can not go above the max heatlh
+        if (carCurrentHealth >= carMaxHealth)
+        {
+            carCurrentHealth = carMaxHealth;
+        }
+
         ApplyEngineForce();
 
         KillOrthogonaVelocity();
@@ -103,4 +124,20 @@ public class Car_Controller : MonoBehaviour
         steeringInput = inputVector.x;
         acclerationInput = inputVector.y;
     }
+
+    public void TakeDamage(float damage)
+    {
+        carCurrentHealth -= damage;
+        healthbar.fillAmount = carCurrentHealth / 100;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Emeny")
+        {
+            TakeDamage(15);
+        }
+    }
+
+
 }
