@@ -8,10 +8,6 @@ public class Turret : MonoBehaviour
     public Rigidbody2D rbBase;
     public Camera cam;
 
-    // Gamepad support
-    [SerializeField] private float controllerDeadzone = 0.1f;
-    [SerializeField] private float gamepadSmoothing = 1000f;
-
     public bool isGamepad;
     [SerializeField] private Vector2 aim;
 

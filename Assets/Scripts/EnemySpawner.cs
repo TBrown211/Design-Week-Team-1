@@ -24,7 +24,6 @@ public class EnemySpawner : MonoBehaviour
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
         // Spawning at an interval
-        /*
         if (spawnTimer <= 0 && currentEnemyAmt < maxEnemyAmt)
         {
             // Random amount and random spots
@@ -52,7 +51,7 @@ public class EnemySpawner : MonoBehaviour
         {
             spawnTimer -= 1 * spawnTimerMultiplier * Time.deltaTime;
         }
-        */
+        
 
         // Debug spawning
         if (Input.GetKeyDown(KeyCode.A))

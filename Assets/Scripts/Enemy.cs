@@ -1,23 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Enemy : MonoBehaviour
 {
-    // Player position
-    public GameObject player;
-
     // Enemy stats
-    public float moveSpeed = 10f;
+    private float moveSpeed = 3f;
 
     // Update is called once per frame
     void Update()
     {
-        // Get player position
-        //Vector2 towardsPlayer = player.transform.position - transform.position;
-        //Debug.Log(towardsPlayer);
-
         // Move towards player
-
+        transform.position = Vector2.MoveTowards(transform.position, GameObject.Find("Turret").transform.position, 1 * moveSpeed * Time.deltaTime);
     }
 }
