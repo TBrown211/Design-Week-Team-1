@@ -14,8 +14,8 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         // Get player position
-        Vector2 towardsPlayer = player.transform.position - transform.position;
-        Debug.Log(towardsPlayer);
+        //Vector2 towardsPlayer = player.transform.position - transform.position;
+        //Debug.Log(towardsPlayer);
 
         // Move towards player
 
