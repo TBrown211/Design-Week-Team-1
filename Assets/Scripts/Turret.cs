@@ -12,11 +12,12 @@ public class Turret : MonoBehaviour
     [SerializeField] private float controllerDeadzone = 0.1f;
     [SerializeField] private float gamepadSmoothing = 1000f;
 
-    [SerializeField] private bool isGamepad;
-    private Vector2 aim;
+    public bool isGamepad;
+    [SerializeField] private Vector2 aim;
 
     // Turret gun 
     Vector2 mousePos;
+    private float angle;
 
     // Bullet spawning
     public Transform firePoint;
@@ -42,16 +43,35 @@ public class Turret : MonoBehaviour
         }
         else
         {
+            // Countdown until next shot
             shotTimer -= 1 * shootingMultiplier * Time.deltaTime;
         }
     }
 
     private void FixedUpdate()
     {
-        // Get look direction
-        Vector2 lookDir = mousePos - rbBase.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rbBase.rotation = angle;
+        // Check which input to use
+        if (isGamepad)
+        {
+            // Get gamepad look direction
+            aim = new Vector2(Input.GetAxisRaw("GamepadX"), Input.GetAxisRaw("GamepadY"));
+            angle = Mathf.Atan2(-aim.y, aim.x) * Mathf.Rad2Deg - 90f;
+
+            // Set the look angle, don't reset when the joystick is still
+            if (aim.y != 0 || aim.x != 0)
+            {
+                rbBase.rotation = angle;
+            }
+        }
+        else
+        {
+            // Get mouse position
+            Vector2 lookDir = mousePos - rbBase.position;
+            angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+
+            // set the turret rotation
+            rbBase.rotation = angle;
+        }
     }
 
     void Shoot()
