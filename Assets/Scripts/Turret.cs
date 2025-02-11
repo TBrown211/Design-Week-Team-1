@@ -8,6 +8,13 @@ public class Turret : MonoBehaviour
     public Rigidbody2D rbBase;
     public Camera cam;
 
+    // Gamepad support
+    [SerializeField] private float controllerDeadzone = 0.1f;
+    [SerializeField] private float gamepadSmoothing = 1000f;
+
+    [SerializeField] private bool isGamepad;
+    private Vector2 aim;
+
     // Turret gun 
     Vector2 mousePos;
 
@@ -28,7 +35,7 @@ public class Turret : MonoBehaviour
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
         // Firing input
-        if (Input.GetButton("Fire1") && shotTimer <= 0)
+        if ((Input.GetButton("Fire1") || Input.GetAxisRaw("Fire1Gamepad") > 0) && shotTimer <= 0)
         {
             Shoot();
             shotTimer = shotTimerReset;
