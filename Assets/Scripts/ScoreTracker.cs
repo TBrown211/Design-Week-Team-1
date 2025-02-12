@@ -19,7 +19,7 @@ public class ScoreTracker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.text = "Score:" + score.ToString();
+        scoreText.text = score.ToString();
     }
 
     public void AddPoint()
@@ -27,7 +27,7 @@ public class ScoreTracker : MonoBehaviour
         //Increase score
         score++;
         //Update the score text
-        scoreText.text = "Score:" + score.ToString();
+        scoreText.text = score.ToString();
     }
 
 }

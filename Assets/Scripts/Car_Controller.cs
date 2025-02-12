@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.WSA;
+using UnityEngine.SceneManagement;
 
 public class Car_Controller : MonoBehaviour
 {
@@ -42,10 +44,12 @@ public class Car_Controller : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            TakeDamage(20);
-        }
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    TakeDamage(20);
+        //}
+
+        GameOver();
     }
 
     void FixedUpdate()
@@ -131,13 +135,12 @@ public class Car_Controller : MonoBehaviour
         healthbar.fillAmount = carCurrentHealth / 100;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void GameOver()
     {
-        if (collision.gameObject.tag == "Emeny")
+        if (carCurrentHealth < 0)
         {
-            TakeDamage(15);
+            SceneManager.LoadScene("Game Over");
         }
     }
-
 
 }
