@@ -1091,6 +1091,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1721406538}
     - target: {fileID: 4406438995736618534, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
+      propertyPath: isGamepad
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406438995736618534, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
       propertyPath: shootingMultiplier
       value: 2
       objectReference: {fileID: 0}
