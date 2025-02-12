@@ -46,6 +46,9 @@ public class Turret : MonoBehaviour
             // Countdown until next shot
             shotTimer -= 1 * shootingMultiplier * Time.deltaTime;
         }
+
+        if (Input.GetAxisRaw("Fire1Gamepad") > 0) { isGamepad = true; }
+        else if (Input.GetButton("Fire1")) { isGamepad = false; }
     }
 
     private void FixedUpdate()
