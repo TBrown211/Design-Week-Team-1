@@ -1062,6 +1062,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 852689d90f0bae64689de0de70d9c102, type: 3}
+    - target: {fileID: 1812987017453043719, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4406438995736618534, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
       propertyPath: cam
       value: 
@@ -1100,7 +1104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6827187734838557977, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6827187734838557977, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
       propertyPath: m_LocalRotation.w
