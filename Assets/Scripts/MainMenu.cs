@@ -58,7 +58,7 @@ public class MainMenu : MonoBehaviour
         // Start the game if both players are ready
         if (isPlayer1Ready && isPlayer2Ready)
         {
-            SceneManager.LoadScene("Car_Driving_Test");
+            SceneManager.LoadScene("Main Game");
         }
     }
 }
