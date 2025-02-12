@@ -6,14 +6,27 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
 
+    private void Update()
+    {
+        StartGame();
+        MainMenu();
+    }
+
     public void StartGame()
     {
-        SceneManager.LoadScene("Main Game");
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("Main Game");
+        }
+
     }
 
     public void MainMenu()
     {
-
+        if (Input.GetKeyDown (KeyCode.Space))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 
     public void QuitGame()
