@@ -1026,6 +1026,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471817852}
   m_CullTransparentMesh: 1
+--- !u!1001 &1625125061
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6636351596752165993}
+    m_Modifications:
+    - target: {fileID: -5938415499989073438, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590275893155976213, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
+      propertyPath: m_Name
+      value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406438995736618534, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1071784662}
+    - target: {fileID: 4406438995736618534, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
+      propertyPath: car
+      value: 
+      objectReference: {fileID: 8653358084874148936}
+    - target: {fileID: 4406438995736618534, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
+      propertyPath: rbBase
+      value: 
+      objectReference: {fileID: 2098189755}
+    - target: {fileID: 6827187734838557977, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827187734838557977, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827187734838557977, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827187734838557977, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827187734838557977, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827187734838557977, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827187734838557977, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827187734838557977, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827187734838557977, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827187734838557977, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
+--- !u!4 &1625125062 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6827187734838557977, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
+  m_PrefabInstance: {fileID: 1625125061}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1931551591
 GameObject:
   m_ObjectHideFlags: 3
@@ -1171,6 +1249,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbdc48f1921f33d4d8b3428fe002b452, type: 3}
+--- !u!50 &2098189755 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 4876812499389244214, guid: 07ded1a94c1c26d4ca670036886d3fff, type: 3}
+  m_PrefabInstance: {fileID: 1625125061}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &322767370986674978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,6 +1359,7 @@ MonoBehaviour:
   maxSpeed: 20
   carMaxHealth: 100
   carCurrentHealth: 0
+  velocityVSUp: 0
   healthbar: {fileID: 223271536}
 --- !u!1 &4692627444596049573
 GameObject:
@@ -1310,6 +1394,7 @@ Transform:
   - {fileID: 543028253}
   - {fileID: 534210693}
   - {fileID: 3618969810763399045}
+  - {fileID: 1625125062}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6913659288176289674

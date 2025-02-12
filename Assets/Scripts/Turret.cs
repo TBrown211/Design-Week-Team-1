@@ -8,6 +8,9 @@ public class Turret : MonoBehaviour
     public Rigidbody2D rbBase;
     public Camera cam;
 
+    // Car support(?)
+    public Rigidbody2D car;
+
     public bool isGamepad;
     [SerializeField] private Vector2 aim;
 
@@ -46,6 +49,9 @@ public class Turret : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Attach(?) turret to car
+        transform.position = new Vector3(car.position.x, car.position.y, -1);
+
         // Check which input to use
         if (isGamepad)
         {

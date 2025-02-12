@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             // Get rid of the enemy when it gets hit by bullet and reduce the current amount of enemies counter by 1
-            GameObject.Find("Enemies").GetComponent<EnemySpawner>().DestroyEnemy();
+            GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>().DestroyEnemy();
             Destroy(collision.gameObject);
         }
 
