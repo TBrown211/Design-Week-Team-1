@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     // Enemy prefab
     public GameObject enemyPrefab;
+    public GameObject player;
 
     // Spawning timer
     public float spawnTimer = 1f;
@@ -45,7 +46,7 @@ public class EnemySpawner : MonoBehaviour
             }
 
             // Reset timer
-            spawnTimer = Random.Range(3, 8);
+            spawnTimer = Random.Range(3, 6);
         }
         else // Count to next enemy spawn
         {
@@ -73,10 +74,12 @@ public class EnemySpawner : MonoBehaviour
     public Vector2 SpawnRange()
     {
         Vector2 spawnPlace;
-        Vector2 playerPos = GameObject.Find("Turret").transform.position;
+        Vector2 playerPos = player.transform.position;
         Vector2 randomDirection = Random.onUnitSphere;
 
-        spawnPlace = playerPos + randomDirection * 20;
+        // Generate random sport to spawn the enemy
+        // Trying to keep it offscreen by adding the car's current velocity
+        spawnPlace = playerPos + randomDirection * (20 + GameObject.Find("Car").GetComponent<Car_Controller>().velocityVSUp);
 
         return spawnPlace;
     }

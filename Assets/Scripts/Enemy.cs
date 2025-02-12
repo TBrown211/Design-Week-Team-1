@@ -12,6 +12,6 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         // Move towards player
-        transform.position = Vector2.MoveTowards(transform.position, GameObject.Find("Turret").transform.position, 1 * moveSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, GameObject.Find("Car").transform.position, 1 * moveSpeed * Time.deltaTime);
     }
 }
