@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.WSA;
+using UnityEngine.SceneManagement;
 
 public class Car_Controller : MonoBehaviour
 {
@@ -47,6 +48,8 @@ public class Car_Controller : MonoBehaviour
         //{
         //    TakeDamage(20);
         //}
+
+        GameOver();
     }
 
     void FixedUpdate()
@@ -130,6 +133,14 @@ public class Car_Controller : MonoBehaviour
     {
         carCurrentHealth -= damage;
         healthbar.fillAmount = carCurrentHealth / 100;
+    }
+
+    public void GameOver()
+    {
+        if (carCurrentHealth < 0)
+        {
+            SceneManager.LoadScene("Game Over");
+        }
     }
 
 }
