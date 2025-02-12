@@ -55,6 +55,7 @@ public class EnemySpawner : MonoBehaviour
         
 
         // Debug spawning
+        /*
         if (Input.GetKeyDown(KeyCode.A))
         {
             GameObject newEnemy = Instantiate(enemyPrefab, mousePos, Quaternion.identity);
@@ -62,6 +63,7 @@ public class EnemySpawner : MonoBehaviour
 
             currentEnemyAmt += 1;
         }
+        */
     }
 
     public void DestroyEnemy()
