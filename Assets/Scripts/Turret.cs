@@ -8,9 +8,9 @@ public class Turret : MonoBehaviour
     public Rigidbody2D rbBase;
     public Camera cam;
 
-    // Gamepad support
-    [SerializeField] private float controllerDeadzone = 0.1f;
-    [SerializeField] private float gamepadSmoothing = 1000f;
+    // Car support(?)
+    public Rigidbody2D rbCar;
+    public Rigidbody2D rbTurret;
 
     public bool isGamepad;
     [SerializeField] private Vector2 aim;
@@ -27,7 +27,7 @@ public class Turret : MonoBehaviour
     public float bulletForce = 20f;
     public float shotTimer = 0f;
     public float shotTimerReset = 0.5f;
-    public float shootingMultiplier = 1f;
+    public float shootingMultiplier = 2f;
 
     // Update is called once per frame
     void Update()
@@ -72,6 +72,13 @@ public class Turret : MonoBehaviour
             // set the turret rotation
             rbBase.rotation = angle;
         }
+    }
+
+    private void LateUpdate()
+    {
+        // Attach turret to car
+        rbBase.transform.position = Vector2.MoveTowards(rbCar.position, transform.position, 1000 * Time.deltaTime);
+        rbTurret.transform.position = Vector2.MoveTowards(rbCar.position, transform.position, 1000 * Time.deltaTime);
     }
 
     void Shoot()

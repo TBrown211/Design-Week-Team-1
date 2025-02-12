@@ -21,7 +21,7 @@ public class Car_Controller : MonoBehaviour
 
     float rotationAngle = 0;
 
-    float velocityVSUp = 0;
+    public float velocityVSUp = 0;
 
     //Components
     Rigidbody2D carRB2D;
