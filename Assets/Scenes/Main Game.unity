@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 69804008}
   m_Layer: 0
   m_Name: Invisible Wall (1)
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 406403790}
   m_Layer: 0
   m_Name: Invisible Wall (3)
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -663,6 +663,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &878563685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 878563687}
+  - component: {fileID: 878563686}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &878563686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878563685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f3ac827be89f87408992bba4afe709c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 4146995907478211557, guid: 40ae28bc880fda9438c3ed51b82d53b2, type: 3}
+  player: {fileID: 6134428359543132815, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
+  spawnTimer: 1
+  spawnTimerReset: 5
+  spawnTimerMultiplier: 1
+  maxEnemyAmt: 20
+  currentEnemyAmt: 0
+  cam: {fileID: 519420031}
+--- !u!4 &878563687
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878563685}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 52.19057, y: 29.79179, z: 7.3353043}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1011336288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -736,7 +788,7 @@ GameObject:
   - component: {fileID: 1313728586}
   m_Layer: 0
   m_Name: Invisible Wall (4)
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -813,7 +865,7 @@ GameObject:
   - component: {fileID: 1592172003}
   m_Layer: 0
   m_Name: Invisible Wall (2)
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1025,3 +1077,4 @@ SceneRoots:
   - {fileID: 1592172004}
   - {fileID: 406403791}
   - {fileID: 1313728587}
+  - {fileID: 878563687}

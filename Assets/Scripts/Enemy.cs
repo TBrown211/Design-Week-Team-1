@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -8,12 +9,24 @@ public class Enemy : MonoBehaviour
     // Enemy stats
     private float moveSpeed = 3f;
 
+    float angle;
+
     // Update is called once per frame
     void Update()
     {
         // Move towards player
         transform.position = Vector2.MoveTowards(transform.position, GameObject.Find("Car").transform.position, 
-            1 * (moveSpeed + GameObject.Find("Car").GetComponent<Car_Controller>().velocityVSUp * 0.75f) * Time.deltaTime);
+            1 * moveSpeed * Time.deltaTime);
+    }
+
+    private void FixedUpdate()
+    {
+        // Get player position
+        Vector2 lookDir = GameObject.Find("Car").transform.position - transform.position;
+        angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+
+        // set the enemy rotation
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
