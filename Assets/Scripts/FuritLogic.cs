@@ -33,4 +33,15 @@ public class FuritLogic : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        // If fruit spawns in something, respawn it somewhere else
+        if (collision.gameObject.tag == "FruitNoSpawn")
+        {
+            GameObject.Find("FruitSpawner").GetComponent<FruitSpawner>().SpawnFruit();
+            Debug.Log("Spawn in something");
+            Destroy(gameObject);
+        }
+    }
 }
