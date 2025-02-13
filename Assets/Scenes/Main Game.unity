@@ -976,6 +976,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3011053931006988587, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: aca2e20b56cfcb048910cdecd4a9837b, type: 3}
     - target: {fileID: 4726838694573228096, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
       propertyPath: carAudio
       value: 
