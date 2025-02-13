@@ -29,9 +29,6 @@ public class Car_Controller : MonoBehaviour
 
     public Image healthbar;
 
-    public AudioSource carAudio;
-
-
     private void Awake()
     {
         carRB2D = GetComponent<Rigidbody2D>();
