@@ -455,6 +455,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 5256139325886311025, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
+      propertyPath: turretSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4040a73748c58f244aec95a8c7caa03f, type: 3}
     - target: {fileID: 6134428359543132815, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
       propertyPath: m_Name
       value: Car

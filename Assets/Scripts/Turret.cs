@@ -29,6 +29,17 @@ public class Turret : MonoBehaviour
     public float shotTimerReset = 0.5f;
     public float shootingMultiplier = 2f;
 
+    [SerializeField]
+    private AudioClip turretSound;
+
+    private AudioSource turretAudioSource;
+
+
+    private void Start()
+    {
+        turretAudioSource = GetComponent<AudioSource>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -90,6 +101,9 @@ public class Turret : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rbBullet = bullet.GetComponent<Rigidbody2D>();
         bullet.transform.parent = transform;
+
+        turretAudioSource.clip = turretSound;
+        turretAudioSource.Play();
 
         // Make the bullet move
         rbBullet.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
