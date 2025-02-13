@@ -35,12 +35,14 @@ public class FruitSpawner : MonoBehaviour
 
     public void SpawnFruit()
     {
+        // All calcs example:
+        // (ground position) + (ground size) - (fruit size)  
         // Ground width
-        float widthMin = ground.transform.position.x - ground.GetComponent<SpriteRenderer>().size.x / 2;
-        float widthMax = ground.transform.position.x + ground.GetComponent<SpriteRenderer>().size.x / 2;
+        float widthMin = ground.transform.position.x - ground.GetComponent<SpriteRenderer>().size.x / 2 + fruit.GetComponentInChildren<SpriteRenderer>().size.x;
+        float widthMax = ground.transform.position.x + ground.GetComponent<SpriteRenderer>().size.x / 2 - fruit.GetComponentInChildren<SpriteRenderer>().size.x;
         // Ground height
-        float heightMin = ground.transform.position.y - ground.GetComponent<SpriteRenderer>().size.y / 2;
-        float heightMax = ground.transform.position.y + ground.GetComponent<SpriteRenderer>().size.y / 2;
+        float heightMin = ground.transform.position.y - ground.GetComponent<SpriteRenderer>().size.y / 2 + fruit.GetComponentInChildren<SpriteRenderer>().size.y;
+        float heightMax = ground.transform.position.y + ground.GetComponent<SpriteRenderer>().size.y / 2 - fruit.GetComponentInChildren<SpriteRenderer>().size.y;
 
         // Get random location
         Vector2 location = new Vector2(Random.Range(widthMin, widthMax), Random.Range(heightMin, heightMax));
