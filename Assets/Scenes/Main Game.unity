@@ -950,7 +950,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 373670101505935756, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.38268343
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 373670101505935756, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
       propertyPath: m_LocalRotation.x
@@ -962,7 +962,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 373670101505935756, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.92387956
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 373670101505935756, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -974,7 +974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 373670101505935756, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -135
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4726838694573228096, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
       propertyPath: carAudio
@@ -1680,6 +1680,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76a917d0ce6a3cf4e922efb67f94b124, type: 3}
+--- !u!1001 &1063925025
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2070794837659796848, guid: dbdc48f1921f33d4d8b3428fe002b452, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2070794837659796848, guid: dbdc48f1921f33d4d8b3428fe002b452, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2070794837659796848, guid: dbdc48f1921f33d4d8b3428fe002b452, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2070794837659796848, guid: dbdc48f1921f33d4d8b3428fe002b452, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2070794837659796848, guid: dbdc48f1921f33d4d8b3428fe002b452, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2070794837659796848, guid: dbdc48f1921f33d4d8b3428fe002b452, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2070794837659796848, guid: dbdc48f1921f33d4d8b3428fe002b452, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2070794837659796848, guid: dbdc48f1921f33d4d8b3428fe002b452, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2070794837659796848, guid: dbdc48f1921f33d4d8b3428fe002b452, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2070794837659796848, guid: dbdc48f1921f33d4d8b3428fe002b452, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728999144723225489, guid: dbdc48f1921f33d4d8b3428fe002b452, type: 3}
+      propertyPath: m_Name
+      value: Fruit Pickup
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dbdc48f1921f33d4d8b3428fe002b452, type: 3}
 --- !u!1 &1090521235
 GameObject:
   m_ObjectHideFlags: 0
@@ -3643,3 +3700,4 @@ SceneRoots:
   - {fileID: 1313728587}
   - {fileID: 878563687}
   - {fileID: 1020289817}
+  - {fileID: 1063925025}

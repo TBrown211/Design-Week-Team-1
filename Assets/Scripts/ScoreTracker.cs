@@ -9,7 +9,7 @@ public class ScoreTracker : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
 
-    private int score = 0;
+    public int score = 0;
 
     private void Awake()
     {
