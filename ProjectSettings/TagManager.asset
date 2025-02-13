@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Fruit
   - Border
+  - FruitNoSpawn
+  - FruitSpawnSpot
   layers:
   - Default
   - TransparentFX
