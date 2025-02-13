@@ -9,6 +9,8 @@ public class FruitSpawner : MonoBehaviour
     public GameObject fruit;
     public GameObject ground;
 
+    private int currentFruitAmt = 0;
+
     // Mouse position for debug
     private Vector2 mousePos;
     public Camera cam;
@@ -17,10 +19,7 @@ public class FruitSpawner : MonoBehaviour
     void Start()
     {
         // Spawn 10 berries at the start of the game
-        for (int i = 0; i < 100; i++)
-        {
-            SpawnFruit();
-        }
+        SpawnFruit();
     }
 
     // Update is called once per frame
@@ -33,10 +32,26 @@ public class FruitSpawner : MonoBehaviour
             GameObject.FindWithTag("Fruit").transform.position = mousePos;
         }
         */
+
+        if (currentFruitAmt <= 0)
+        {
+            SpawnFruit();
+        }
     }
 
     public void SpawnFruit()
     {
+        // Spawn all fruit
+        GameObject[] fruitSpawnSpots = GameObject.FindGameObjectsWithTag("FruitSpawnSpot");
+
+        for (int i = 0; i < fruitSpawnSpots.Length; i++)
+        {
+            GameObject newFruit = Instantiate(fruit, fruitSpawnSpots[i].transform.position, Quaternion.identity);
+            newFruit.transform.parent = transform;
+            currentFruitAmt++;
+        }
+
+        /*
         // All calcs example:
         // (ground position) + (ground size) - (fruit size)  
         // Ground width
@@ -59,11 +74,13 @@ public class FruitSpawner : MonoBehaviour
         {
             // Get random location
             location = new Vector2(Random.Range(widthMin, widthMax), Random.Range(heightMin, heightMax));
+
+            // Check over all other objects
             for (int i = 0;i < invalidLocations.Length;i++)
             {
-                if (Vector2.Distance(location, invalidLocations[i].transform.position) < 250f)
+                // Fruit is too close to something
+                if (Vector2.Distance(location, invalidLocations[i].transform.position) > 10f)
                 {
-                    Debug.Log("Invalid location");
                     break;
                 }
                 canSpawnHere = true;
@@ -74,6 +91,11 @@ public class FruitSpawner : MonoBehaviour
 
         // Get random location
         //Vector2 location = new Vector2(Random.Range(widthMin, widthMax), Random.Range(heightMin, heightMax));
-        
+        */
+    }
+
+    public void PlayerGotFruit()
+    {
+        currentFruitAmt -= 1;
     }
 }
