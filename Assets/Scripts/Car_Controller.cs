@@ -29,6 +29,8 @@ public class Car_Controller : MonoBehaviour
 
     public Image healthbar;
 
+    public AudioSource carAudio;
+
 
     private void Awake()
     {
@@ -137,7 +139,7 @@ public class Car_Controller : MonoBehaviour
 
     public void GameOver()
     {
-        if (carCurrentHealth < 0)
+        if (carCurrentHealth <= 0)
         {
             SceneManager.LoadScene("Game Over");
         }
