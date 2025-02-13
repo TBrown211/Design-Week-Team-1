@@ -451,13 +451,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -135
       objectReference: {fileID: 0}
+    - target: {fileID: 4726838694573228096, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
+      propertyPath: carAudio
+      value: 
+      objectReference: {fileID: 546260510}
     - target: {fileID: 5256139325886311025, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 5256139325886311025, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
+      propertyPath: turretSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4040a73748c58f244aec95a8c7caa03f, type: 3}
     - target: {fileID: 6134428359543132815, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
       propertyPath: m_Name
       value: Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734929045570700126, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734929045570700126, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734929045570700126, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -491,6 +511,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &546260510 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7734929045570700126, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
+  m_PrefabInstance: {fileID: 546260505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &637448961
 GameObject:
   m_ObjectHideFlags: 0

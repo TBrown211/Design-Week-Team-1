@@ -10,6 +10,7 @@ public class SceneChanger : MonoBehaviour
     {
         StartGame();
         MainMenu();
+        QuitGame();
     }
 
     public void StartGame()
@@ -31,7 +32,10 @@ public class SceneChanger : MonoBehaviour
 
     public void QuitGame()
     {
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
 
