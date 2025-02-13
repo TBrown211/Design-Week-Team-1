@@ -694,6 +694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fruit: {fileID: 2728999144723225489, guid: dbdc48f1921f33d4d8b3428fe002b452, type: 3}
   ground: {fileID: 637448961}
+  cam: {fileID: 519420031}
 --- !u!4 &862085560
 Transform:
   m_ObjectHideFlags: 0

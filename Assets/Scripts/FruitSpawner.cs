@@ -8,6 +8,10 @@ public class FruitSpawner : MonoBehaviour
     public GameObject fruit;
     public GameObject ground;
 
+    // Mouse position for debug
+    private Vector2 mousePos;
+    public Camera cam;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +25,15 @@ public class FruitSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // Debug
+        mousePos = mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            GameObject.FindWithTag("Fruit").transform.position = mousePos;
+        }
     }
 
-    void SpawnFruit()
+    public void SpawnFruit()
     {
         // Ground width
         float widthMin = ground.transform.position.x - ground.GetComponent<SpriteRenderer>().size.x / 2;
