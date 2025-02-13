@@ -13,7 +13,7 @@ public class GetFinalScore : MonoBehaviour
     void Start()
     {
         finalScore = ScoreTracker.instance.score;
-        finalScoreText.text = "You Collected " + finalScore.ToString() + " Berries";
+        finalScoreText.text = "You Collected " + finalScore.ToString() + " Buckets of Cereal!";
     }
 
 }
