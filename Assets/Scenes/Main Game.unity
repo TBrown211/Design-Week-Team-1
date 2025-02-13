@@ -981,6 +981,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 546260510}
     - target: {fileID: 4726838694573228096, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
+      propertyPath: carSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f2a4efcfde589d94d986f39e598d3bde, type: 3}
+    - target: {fileID: 4726838694573228096, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
       propertyPath: carDeathClip
       value: 
       objectReference: {fileID: 8300000, guid: e7c5d9e3226634c48a3d690b40129e65, type: 3}
@@ -1006,7 +1010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7734929045570700126, guid: 5f052deb872495241bb4f964bcff25eb, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
